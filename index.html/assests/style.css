@@ -1,0 +1,67 @@
+h1 {
+    color: blue;
+    text-align: center;
+    font-weight: bold;
+    font-stretch: extra-expanded;
+    text-shadow: 3px 2px black;
+    font-style: italic;
+    font-size: 75px;
+}
+
+#time-remaining {
+    text-align: center;
+    color: red;
+}
+
+.form-check {
+    text-align: center;
+    color: white;
+
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}
+
+.trivia-body {
+    color: white;
+    width: 75%;
+    margin-left: 15%;
+    padding: 10px;
+    text-align: center;
+}
+
+.rules {
+    color: red;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 22px;
+    border: solid;
+    border-color: white;    
+}
+
+footer {
+    background-color: white;
+    text-align: center;
+    color: blue;
+    height: 20px;
+    padding: 15px;
+}
+
+.button {
+    width: 70px;
+    height: 30px;
+    color: white;
+    background-color: blue;
+}
+
+.question {
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.answers {
+    font-size: 18px;
+    font-weight: 700;
+}
