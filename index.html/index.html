@@ -1,124 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/1.3.1/css/bootstrap.min.css" integrity="sha381-ggOyR0iXCbMQv3Xipma31MD+dH/1fQ781/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./assests/style.css">
 </head>
-<body background="./assests/disneybackround1500.jpg">
 
-    <div class="trivia-body">
+<body background="assests/mouseears.png">
 
-        <header><h1>Totally Trivial Trivia!<div id = "time-remaining">60</div></h1></header>
+    <div id="wrapper">
 
-        <div class="rules">
-            <P>You have 60 seconds to answer the questions below. Press Start to begin the quiz.
-                Lets see how well you know your Disney Trivia!
-            </P>
-        </div>
+        <h1>Disney Trivia</h1>  
 
-        <br><br>
+        <div id="sub-wrapper">
 
-        <button class="button" id="start">Start!</button>
-
-        <br><br>
-       
-            <div class="question">In the Lion King, where does Mufasa and his family live?</div>
-
-            <br>
-
-            <form class="answers">
-                <input type="radio" name=1 class="choice" value="wrong"> Pride palace
-                <input type="radio" name=1 class="choice" value="wrong"> Swamp palace
-                <input type="radio" name=1 class="choice" value="wrong"> Ridge Rock
-                <input type="radio" name=1 class="choice" value="correct"> Pride Rock
-            </form>
-
-            <br>
-
-            <div class="question">What town is the setting for the Disney Movie “The Love Bug?”</div>
-
-            <br>
-
-            <form class="answers">
-                <input type="radio" name=2 class="choice" value="wrong"> Louisiana
-                <input type="radio" name=2 class="choice" value="correct"> San Francisco
-                <input type="radio" name=2 class="choice" value="wrong"> New Mexico
-                <input type="radio" name=2 class="choice" value="wrong"> Califonia
-            </form>
-
-            <br>
-
-            <div class="question"> In The Jungle Book who teaches Mowgli about The Bare Necesseties of life?</div>
-
-            <br>
-
-            <form class="answers">
-                <input type="radio" name=3 class="choice" value="wrong"> bagheera
-                <input type="radio" name=3 class="choice" value="correct"> Baloo
-                <input type="radio" name=3 class="choice" value="wrong"> shanti
-                <input type="radio" name=3 class="choice" value="wrong"> Kaa
-            </form>
-
-            <br>
-
-            <div class="question">What is the name of the boy who owns Buzz Lightyear in the movie Toy Story?</div>
-
-            <br>
-
-            <form class="answers">
-                <input type="radio" name=4 class="choice" value="wrong"> Woody
-                <input type="radio" name=4 class="choice" value="correct"> Andy
-                <input type="radio" name=4 class="choice" value="wrong"> Sid
-                <input type="radio" name=4 class="choice" value="wrong"> Molly
-            </form>
-
-            <br>
-
-            <div class="question">Which Disney princess has a raccoon as a bestfriend?</div>
-
-            <br>
-
-            <form class="answers">
-                <input type="radio" name=5 class="choice" value="correct"> Pocahontas
-                <input type="radio" name=5 class="choice" value="wrong"> SnowWhite
-                <input type="radio" name=5 class="choice" value="wrong"> Ciderella
-                <input type="radio" name=5 class="choice" value="wrong"> Belle
-            </form>
-
-            <br>
-
-            <div class="question">In the movie Finding Nemo, which country has Nemo been taken to?</div>
-
-            <br>
-
-            <form class="answers">
-                <input type="radio" name=6 class="choice" value="wrong"> Purto Rico
-                <input type="radio" name=6 class="choice" value="wrong"> New Zeland
-                <input type="radio" name=6 class="choice" value="wrong"> Canada
-                <input type="radio" name=6 class="choice" value="correct"> Aulstralia
-            </form>
-
-            <br>
-      
-
-            <button class="button" id="done">Done!</button><button class="button" id="reset">Reset!</button>
-
-            <div id="results"></div>
-
+            <div id="p">
+                <p>Once you press the 'start' button, you have 60 seconds to test your Disney knowledge. Lets see how well you do! Ready! Set! Trivia! </p>
             </div>
 
-            <footer>
-            -------WALT DISNEY TRIVIA------
-            </footer>
+                <div id="quiz-area">
+
+                    <button id="start">Start</button>
+
+                </div>
+            </div>
+        </div>
 
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha381-q8i/X+965DzO0rT7abK11JStQIAqVgRVzpbzo5smXKp1YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.7/umd/popper.min.js" integrity="sha381-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq1sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/1.3.1/js/bootstrap.min.js" integrity="sha381-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf1x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="./assests/trivia.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha381-q8i/X+965DzO0rT7abK11JStQIAqVgRVzpbzo5smXKp1YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.7/umd/popper.min.js"
+        integrity="sha381-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq1sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/1.3.1/js/bootstrap.min.js"
+        integrity="sha381-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf1x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="./assests/trivia.js"></script>
 </body>
+
 </html>

@@ -8,17 +8,6 @@ h1 {
     font-size: 75px;
 }
 
-#time-remaining {
-    text-align: center;
-    color: red;
-}
-
-.form-check {
-    text-align: center;
-    color: white;
-
-}
-
 h2 {
     text-align: center;
     color: white;
@@ -32,15 +21,6 @@ h2 {
     text-align: center;
 }
 
-.rules {
-    color: red;
-    font-weight: bolder;
-    text-align: center;
-    font-size: 22px;
-    border: solid;
-    border-color: white;    
-}
-
 footer {
     background-color: white;
     text-align: center;
@@ -49,13 +29,28 @@ footer {
     padding: 15px;
 }
 
-.button {
+#start {
     width: 70px;
     height: 30px;
     color: white;
     background-color: blue;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 15%;
 }
 
+#done{
+    width: 70px;
+    height: 30px;
+    color: white;
+    background-color: blue;
+    text-align: center;
+    float: right;
+}
+
+#quiz-area {
+    text-align: center;
+}
 .question {
     font-weight: bolder;
     font-size: 20px;
@@ -64,4 +59,27 @@ footer {
 .answers {
     font-size: 18px;
     font-weight: 700;
+    text-align: center;
+    color: red;
+}
+
+#p{
+    border: solid;
+    font-size: 30px;
+    border-color: white;
+    background-color: white;
+    width: 30%;
+    height: 40%;
+    color: black;
+    text-align: center;
+    margin-left: 30%;
+}
+
+/* #sub-wrapper{
+    background-color: white;
+    color: black;
+} */
+
+body{
+    background-color: black;
 }

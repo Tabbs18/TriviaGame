@@ -1,100 +1,101 @@
-var options = [{
-    question: "In the Lion King, where does Mufasa and his family live?"
-}, {
-    question:"What town is the setting for the Disney Movie “The Love Bug?”"
-}
-//create questions, answers and correct answers
-//nested loop to generate questions + radio
-//check for radio buttons input "checked" set variable to equal
-//seperate loop to check
-// options.questions[ctr].correctAnswers[i] === input
-]
+var card = $("#quiz-area");
 
-var correctAnswers =0;
+// Question set
+var questions = [
+  {
+    question: "In the Lion King, where does Mufasa and his family live?",
+    answers: ["Pride Rock", "Swamp Palace", "Ridge Rock", "Pride Palace"],
+    correctAnswer: "Pride Rock"
+  },
+  {
+    question: "What town is the setting for the Disney Movie “The Love Bug?”",
+    answers: ["Louisiana", "San Francisco", "New Mexico", "California"],
+    correctAnswer: "San Francisco"
+  },
+  {
+    question:  "What is the name of the boy who owns Buzz Lightyear in the movie Toy Story?",
+    answers: ["Woody", "Andy", "Sid", "Molly"],
+    correctAnswer: "Woody"
+  },
+  {
+    question: "Which Disney princess has a raccoon as a bestfriend?",
+    answers: ["Pocahontas", "SnowWhite", "Ciderella", "Belle"],
+    correctAnswer: "Pocahontas"
+  },
+  {
+    question: "In the movie Finding Nemo, which country has Nemo been taken to?",
+    answers: ["Purto Rico", "New Zeland", "Canada", "Aulstralia"],
+    correctAnswer: "Aulstralia"
+  },
+];
 
-var timerRunning = false;
+// Variable that will hold the setInterval
+var timer;
 
-$(document).ready(function(){
+var game = {
+  correct: 0,
+  incorrect: 0,
+  counter: 60,
 
-    $("#start").click(function(){
+  countdown: function() {
+    game.counter--;
+    $("#counter-number").html(game.counter);
+    if (game.counter === 0) {
+      console.log("TIME UP");
+      game.done();
+    }
+  },
 
-        var number = 60;
+  start: function() {
+    timer = setInterval(game.countdown, 1000);
 
-        $("#start").on("click", start);  
-        $("#done").on("click", done);  
-        $("#reset").on("click", reset);  
+    $("#sub-wrapper").prepend(
+      "<h2>Time Remaining: <span id='counter-number'>60</span> Seconds</h2>"
+    );
 
-        //fucntion to check if the answers are correct
+    $("#start").remove();
+    $("#p").remove();
 
-        function start(){
+    for (var i = 0; i < questions.length; i++) {
+      card.append("<h2>" + questions[i].question + "</h2>");
+      for (var j = 0; j < questions[i].answers.length; j++) {
+        card.append("<input type='radio' name='question-" + i +
+          "' value='" + questions[i].answers[j] + "''>" + questions[i].answers[j]);
+      }
+    }
 
-            counter = setInterval(timer, 1000);
+    card.append("<button id='done'>Done</button>");
+  },
 
-            timerRunning = true;
+  done: function() {
+    var inputs = card.children("input:checked");
+    for (var i = 0; i < inputs.length; i++) {
+      if ($(inputs[i]).val() === questions[i].correctAnswer) {
+        game.correct++;
+      } else {
+        game.incorrect++;
+      }
+    }
+    this.result();
+  },
 
-            showMe(".question");
-            showMe(".answers");
-            showMe("#done");
-            hideMe("#start");
-            hideMe(".rules");
-            hideMe("#reset");
-            hideMe("#results");
-        }
+  result: function() {
+    clearInterval(timer);
 
-        function timer(){
+    $("#sub-wrapper h2").remove();
 
-            // decreases the timer by 1
-          number-- 
+    card.html("<h2>All Done!</h2>");
+    card.append("<h3>Correct Answers: " + this.correct + "</h3>");
+    card.append("<h3>Incorrect Answers: " + this.incorrect + "</h3>");
+  }
+};
 
-          $("#time-remaining").html("<h3>" + number + "</h3>" );
+// CLICK EVENTS
 
-          if (number === 0){
+$(document).on("click", "#start", function() {
+  game.start();
+});
 
-            alert("Lets See How You Did!!")
-
-             // calls the stop function
-            stop();
-          }
-        }
-
-        function stop(){
-
-            timerRunning = false;
-
-            // stops the timer
-            clearInterval(counter); 
-
-            $("#correct").show();
-            $("#reset").show();
-            $(".question").hide();
-            $(".answers").hide();
-            $("#done").hide();
-        }
-
-        function done(){  
-
-            // set number equal to 0 number will show -1 so 1 has to be declared or it will keep going negative
-            number = 1; 
-            
-            clearInterval(counter);
-            timer();
-        }
-    
-        function reset(){
-            number = 60;
-            correctAnswers = 0;
-            start();
-        }
-    
-        function hideMe(i) {
-            $(i).hide();
-        }
-        function showMe(i) {
-            $(i).show();
-        }                                                               
-    
-    // calls the start function
-          start(); 
-      });
-    });
-     
+$(document).on("click", "#done", function() {
+  game.done();
+});
