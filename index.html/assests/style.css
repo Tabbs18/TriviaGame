@@ -13,22 +13,6 @@ h2 {
     color: white;
 }
 
-.trivia-body {
-    color: white;
-    width: 75%;
-    margin-left: 15%;
-    padding: 10px;
-    text-align: center;
-}
-
-footer {
-    background-color: white;
-    text-align: center;
-    color: blue;
-    height: 20px;
-    padding: 15px;
-}
-
 #start {
     width: 70px;
     height: 30px;
@@ -50,6 +34,7 @@ footer {
 
 #quiz-area {
     text-align: center;
+
 }
 .question {
     font-weight: bolder;
@@ -75,6 +60,11 @@ footer {
     margin-left: 30%;
 }
 
+/* #wrapper {
+    background-color: white;
+    width: 50%;
+    text-align: center;
+} */
 /* #sub-wrapper{
     background-color: white;
     color: black;
